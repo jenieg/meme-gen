@@ -5,12 +5,9 @@ header {
     height: 65px;
     width: 100%;
 
-    /* background-color: blueviolet; */
+    background: linear-gradient(to right, #672280, #A626D3);
     color: #fff;
-}
-
-.header__gradient {
-    background-color: linear-gradient(to right, #672280, #A626D3);
+    letter-spacing: -0.1rem;
 }
 
 .header__img {
