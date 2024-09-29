@@ -1,0 +1,19 @@
+header {
+    display: flex;
+    align-items: center;
+
+    height: 65px;
+    width: 100%;
+
+    /* background-color: blueviolet; */
+    color: #fff;
+}
+
+.header__gradient {
+    background-color: linear-gradient(to right, #672280, #A626D3);
+}
+
+.header__img {
+    margin: 0 1rem 0 2rem;
+    height: 2.5rem;
+}
