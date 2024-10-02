@@ -1,0 +1,40 @@
+main {
+    padding: 36px;
+}
+
+.form {
+    display: grid;
+    grid-template: 40px 40px / 1fr 1fr;
+    gap: 17px;
+}
+
+.form__input{
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    text-indent: 5px;
+}
+
+.form--input {
+    padding: 5px;
+    border: 1px solid #D5D4D8;
+    border-radius: 5px;
+    font-family: 'karla', sans-serif;
+    font-size: 1em;
+    text-indent: 5px;
+}
+
+.form--button {
+    grid-column: 1 / -1;
+    border-radius: 5px;
+    border: none;
+    background: linear-gradient(to right, #672280, #A626D3);
+    font-family: 'karla', sans-serif;
+    font-size: 1em;
+    font-weight: 700;
+    letter-spacing: 0.025rem;
+    color: #fff;
+    cursor: pointer;
+}
