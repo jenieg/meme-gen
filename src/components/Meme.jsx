@@ -1,13 +1,18 @@
+// eslint-disable-next-line no-unused-vars
+import React, {useState} from "react"
 import './meme.css'
 import memesData from "../memesData.js"
 
 const Meme = () => {
+    const [memeImage, setMemeImage] = useState('');
+
     function getMemeImage() {
         const memeArray = memesData.data.memes;
-        const randomNumber = Math.floor(Math.random() * memeArray.length)
-        const url = memeArray[randomNumber].url
-        console.log(url)
+        const randomNumber = Math.floor(Math.random() * memeArray.length);
+        setMemeImage(memeArray[randomNumber].url)
     }
+
+    
 
     return (
         <main>
@@ -32,6 +37,7 @@ const Meme = () => {
 
                 <button className="form--button" onClick={getMemeImage}>Get a new image</button>
             </div>
+            <img src={memeImage} alt="" className="meme--img"/>
         </main>
     );
 };

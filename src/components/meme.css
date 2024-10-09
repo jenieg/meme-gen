@@ -1,4 +1,8 @@
 main {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 36px;
 }
 
@@ -37,4 +41,8 @@ label {
     letter-spacing: 0.025rem;
     color: #fff;
     cursor: pointer;
+}
+
+meme--img {
+    max-width: 100%;
 }
