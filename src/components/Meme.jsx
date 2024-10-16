@@ -1,18 +1,28 @@
-// eslint-disable-next-line no-unused-vars
+/* eslint-disable no-unused-vars */
 import React, {useState} from "react"
 import './meme.css'
 import memesData from "../memesData.js"
 
 const Meme = () => {
-    const [memeImage, setMemeImage] = useState('');
+    const [memeImage, setMemeImage] = useState({
+        topText: '',
+        bottomText: '',
+        randomImage: 'http://i.imgflip.com/1bij.jpg',
+    });
+
+    const [allMemeImages, setAllMemeImages] = useState(memesData)
 
     function getMemeImage() {
-        const memeArray = memesData.data.memes;
+        const memeArray = allMemeImages.data.memes;
         const randomNumber = Math.floor(Math.random() * memeArray.length);
-        setMemeImage(memeArray[randomNumber].url)
+        const url = memeArray[randomNumber].url;
+        setMemeImage(prevMeme => {
+            return {
+                ...prevMeme,
+                randomImage: url
+            }
+        })
     }
-
-    
 
     return (
         <main>
@@ -35,9 +45,14 @@ const Meme = () => {
                     
                 </div>
 
-                <button className="form--button" onClick={getMemeImage}>Get a new image</button>
+                <button className="form--button" 
+                        onClick={getMemeImage}
+                >
+                        Get a new image</button>
             </div>
-            <img src={memeImage} alt="" className="meme--img"/>
+            <div className="container">
+                <img src={memeImage.randomImage} alt="" className="meme--img"/>
+            </div>
         </main>
     );
 };
